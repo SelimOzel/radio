@@ -27,7 +27,7 @@ void main() {
 	// Settings for Windows development and Ubuntu 20.04 EC2 deployment
 	auto settings = new HTTPServerSettings;
 	settings.sessionStore = new MemorySessionStore;
-	settings.port = 666;
+	settings.port = 8080;
 
 	version(Windows) {
 		settings.bindAddresses = ["127.0.0.1"];

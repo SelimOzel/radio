@@ -1,5 +1,3 @@
-import std.file: read;
-import std.stdio;
 import vibe.d; 
 import vibe.core.file;
 
@@ -29,9 +27,13 @@ void main() {
 	// Settings for Windows development and Ubuntu 20.04 EC2 deployment
 	auto settings = new HTTPServerSettings;
 	settings.sessionStore = new MemorySessionStore;
-	settings.port = 8080;
+	settings.port = 666;
 
-	settings.bindAddresses = ["127.0.0.1"];
+	version(Windows) {
+		settings.bindAddresses = ["127.0.0.1"];
+	} else {
+		settings.bindAddresses = ["::"];
+	}
 
 	auto listener = listenHTTP(settings, router);
 	scope(exit) listener.stopListening();	

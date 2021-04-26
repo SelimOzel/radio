@@ -28,6 +28,7 @@ void main() {
 	auto settings = new HTTPServerSettings;
 	settings.sessionStore = new MemorySessionStore;
 	settings.port = 8080;
+	settings.maxRequestSize = 50_000_000;
 
 	version(Windows) {
 		settings.bindAddresses = ["127.0.0.1"];

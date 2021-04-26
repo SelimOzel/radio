@@ -1,0 +1,7 @@
+name "radio"
+description "Broadcast mp3s to friends."
+authors "sozel"
+copyright "Copyright © 2021, sozel"
+license "proprietary"
+dependency "vibe-d" version="~>0.8.6"
+versions "VibeHighEventPriority"

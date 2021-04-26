@@ -1,0 +1,17 @@
+.dub
+docs.json
+dub.selections.json
+__dummy.html
+docs/
+/radio
+radio.so
+radio.dylib
+*.dll
+radio.a
+radio.lib
+radio-test-*
+*.exe
+*.o
+*.obj
+*.lst
+*.mp3

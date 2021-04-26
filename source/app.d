@@ -33,6 +33,9 @@ void main() {
 		settings.bindAddresses = ["127.0.0.1"];
 	} else {
 		settings.bindAddresses = ["::"];
+		settings.tlsContext = createTLSContext(TLSContextKind.server);
+		settings.tlsContext.useCertificateChainFile("../../cert.pem");
+		settings.tlsContext.usePrivateKeyFile("../../key.pem");			
 	}
 
 	auto listener = listenHTTP(settings, router);
